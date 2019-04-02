@@ -1306,4 +1306,5 @@ Y=[30.0345
    41.7045];
 Y=reshape(Y,m,N);
 
-A = Y / X;
+%per trovare la matrice di parametri least squares
+A = Y / X
