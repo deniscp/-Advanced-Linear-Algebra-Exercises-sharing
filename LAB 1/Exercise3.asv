@@ -6,8 +6,8 @@
     J = (1/N) * sommatoria((log(T_model_i/T_i))^(2))
    Considerando che:
     T_model(l) = C * l^(B) * l^(g*l)
-    l e T appartengono a R^(mxn)
-
+    l e T apparteng a R^(mxn)
+    T appartiene a R^(mxn)
 
    Soluzione
    Per minimizzare la funzione J modifichiamo la funzione logaritmica al suo interno:
@@ -42,7 +42,7 @@
     x = (A' * A)^(-1) * A' * y
     dove A è la nostra matrice A
          y è la nostra matrice b
-        (A' * A)^(-1) * A' = pseudoinversa di A
+    (A' * A)^(-1) * A' = pseudoinversa di A
    
    Ricordando che otterremo:
     x = [log(C) ;    
@@ -62,16 +62,16 @@
    Quindi dato che A appartiene a R^(mxp) deve valere:
     rank(A) = min(m,p)
     m >= p  ---> rank(A) = p
-%}
+   %}
 
    
-%{
-   DOMANDA 2
+   %{
+    DOMANDA 2
    
-   Applica il metodo calcolato precedentemente sui dati all'interno del
-    file empacII_data.m e calcola i valori di C, B, g e il valore
-    corrispondente a J.
-%}
+    Applica il metodo calcolato precedentemente sui dati all'interno del
+     file empacII_data.m e calcola i valori di C, B, g e il valore
+     corrispondente a J.
+   %}
 
 % Dati provenienti dal file empacII_data
 l =[17
@@ -283,7 +283,7 @@ log_T = log(T);
 log_l = log(l);
 
 % Composizione vettore di logaritmi delle lunghezze moltiplicati per le
-%   lunghezze corrispondenti
+%   lunghezze stesse
 llog_l = [];
 for i = 1: size(l,1)
     llog_l(i) = l(i)*log_l(i);
