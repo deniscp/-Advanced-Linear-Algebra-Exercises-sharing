@@ -1,4 +1,4 @@
-function [Q,R] = genQR(A)
+function [Q,R,L] = genQR(A)
 
 rankA = rank(A);
 min_dim = min(size(A));
@@ -11,6 +11,7 @@ end
 
 Q = [];
 R = [];
+L = [];
 
 old_rank = 0;
 
@@ -21,15 +22,15 @@ for i= (1: size(A,2) ) %for all the columns of the input A matrix
     r_i = zeros(rankA,1);
     R_ji = 0;
     
-    q_tilde = a_i;
-    j = 0;
-    
+    q_tilde = a_i;    
     
     for j = (1 : size(Q,2))
         %fprintf('i: %i, j: %i\n',i,j);
         q_j = Q(:,j);
+        
         R_ji = a_i' * q_j;
         r_i(j) =  R_ji;
+        
         q_tilde= q_tilde - R_ji * q_j;
     end
     
@@ -41,6 +42,10 @@ for i= (1: size(A,2) ) %for all the columns of the input A matrix
         j=size(Q,2);
         R_ji = a_i' * q;
         r_i(j) = R_ji;
+        
+        l= zeros(size(A,2),1);
+        l(i) = 1;
+        L = [ L l ];
         
     else
         fprintf('Skip a_%i\n',i)
