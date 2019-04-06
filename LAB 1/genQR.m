@@ -32,21 +32,20 @@ for i= (1: size(A,2) ) %for all the columns of the input A matrix
         r_i(j) =  R_ji;
         q_tilde= q_tilde - R_ji * q_j;
     end
-        
+    
     if new_rank ~= old_rank %if we are processing an independent column, i.e. norm of q tilde > 0
-       
-        q = q_tilde / norm(q_tilde);
-        R_ji = a_i' * q;
-     
-        j=size(Q,2)+1;
         
+        q = q_tilde / norm(q_tilde);
+        Q = [ Q q ];
+        
+        j=size(Q,2);
+        R_ji = a_i' * q;
         r_i(j) = R_ji;
         
-        Q = [ Q q ];
     else
         fprintf('Skip a_%i\n',i)
     end
-        
+    
     R = [ R r_i ];
     
     old_rank = new_rank;
