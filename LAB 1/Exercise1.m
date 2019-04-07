@@ -31,11 +31,10 @@ B = [ 1     2     0    -1     2     2
 %Un modo per individuarlo e quello di calcolare la Q2 associata alla
 %trasposta dell matrice dei coefficienti del sistema lineare
 %data dalla procedura full QR.
-%Infatti l'insieme delle colonne di Q2 rappresenta una base ortonormale dello
-%spazio delle soluzioni del sistema lineare:
-
 [Q1_b,Q2_b,R_b,L_b] = fullQR(B')
 
+%Infatti l'insieme delle colonne di Q2 rappresenta una base ortonormale dello
+%spazio delle soluzioni del sistema lineare:
 display(Q2_b);
 
 %Test della base, ci aspettiamo di trovare una matrice composta da zeri.
