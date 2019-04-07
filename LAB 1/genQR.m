@@ -4,14 +4,17 @@ rankA = rank(A);
 min_dim = min(size(A));
 
 if min_dim ~= rankA
-    fprintf('Matrix A is not full rank\n')
+    fprintf('The input matrix is not full rank\n')
 else
-    fprintf('Matrix A is full rank\n')
+    fprintf('The input matrix is full rank\n')
 end
 
 Q = [];
 R = [];
 L = [];
+%Matrix L if right-multiplied to the input matrix selects a set of columns
+%that is linearly indipendent. If right-multiplied to the R matrix makes it
+%square and upper triangular.
 
 old_rank = 0;
 
@@ -25,7 +28,6 @@ for i= (1: size(A,2) ) %for all the columns of the input A matrix
     q_tilde = a_i;    
     
     for j = (1 : size(Q,2))
-        %fprintf('i: %i, j: %i\n',i,j);
         q_j = Q(:,j);
         
         R_ji = a_i' * q_j;

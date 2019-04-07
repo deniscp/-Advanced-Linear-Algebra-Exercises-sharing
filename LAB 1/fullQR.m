@@ -1,5 +1,9 @@
 function [Q1,Q2,R,L] = fullQR(A)
 
+%since the QR procedure is incremental, we first compute the Q1 matrix associated
+%to the input A matrix with the generalized QR algorithm using genQR.m,
+%then we compute the Q2 matrix associated to the A matrix exending it with
+%the appropriate matrix I using the full QR procedure with fullQR.m
 [Q1,R,L] = genQR(A);
 Q2=[];
 A_extended = [ A eye(size(A,1)) ];
