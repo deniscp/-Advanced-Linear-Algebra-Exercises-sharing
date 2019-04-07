@@ -22,7 +22,7 @@ xln_pinv = pinv(A) * y_hat;
 
 
 %check if x
-xln == xln_pinv
+xln = xln_pinv
 
 %plot force vector position and velocity 
 
