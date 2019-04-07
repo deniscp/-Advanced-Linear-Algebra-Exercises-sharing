@@ -1,67 +1,7 @@
 %{
    DOMANDA 1
    
-   Obiettivo
-   Trovare le costanti che minimizzano la funzione J:
-    J = (1/N) * sommatoria((log(T_model_i/T_i))^(2))
-   Considerando che:
-    T_model(l) = C * l^(B) * l^(g*l)
-    l e T appartengono a R^(mxn)
-
-
-   Soluzione
-   Per minimizzare la funzione J modifichiamo la funzione logaritmica al suo interno:
-    log(T_model_i/T_i) = log(T_model_i) - log(T_i) =
-                       = log(C * l_i^(B) * l_i^(g*l_i)) - log(T_i) =
-                       = log(C) + log(l_i^(B)) + log(l_i^(g*l_i)) - log(T_i) =
-                       = log(C) + B*log(l_i) + g*l_i*log(l_i) - log(T_i)
-   
-   Considero:
-    x = [log(C) ;    
-           B    ; 
-           g    ]
-    x appartiene a R^(nxp) dove p = numero di costanti (in questo caso 3)
-   
-    b = [log(T_i)]
-
-    a_i = [1  log(l_i)  l_i*log(l_i)] 
-    A = [a_1;  a_2;  ...;  a_m]
-    A appartiene a R^(mxp)
-
-   Di conseguenza:
-    log(T_model_i/T_i) = log(C) + B*log(l_i) + g*l_i*log(l_i) - log(T_i) =
-                       = A*x - b
-   
-   Abbiamo ricondotto la funzione non lineare ad una funzione affine.
-   
-   La funzione J può essere riscritta come:
-    J = (1/N) * sommatoria(A*x - b)^(2))
-   riconducendo il nostro problema ad un problema di least squares 
-   
-   Per calcolare x utilizziamo la seguente formula (A deve essere into):
-    x = (A' * A)^(-1) * A' * y
-    dove A è la nostra matrice A
-         y è la nostra matrice b
-        (A' * A)^(-1) * A' = pseudoinversa di A
-   
-   Ricordando che otterremo:
-    x = [log(C) ;    
-           B    ; 
-           g    ]
-   dovremo modificare la soluzione per ottenere il valore di C
-    C = e^(x(1))
-   
-   Dato che abbiamo ricondotto il nostro problema ad un problema di least
-    squares, possiamo dichiarare che questa soluzione riconduce sempre al
-    minimo valore globale di J. Se avessimo dovuto usare il metodo della
-    linearizzazione, il minimo valore ottenuto di J sarebbe stato locale.
-   
-   Per poter utilizare la formula:
-    x = pseudoinverse_A * y
-   la matrice A deve essere into, ovvero deve essere full rank skinny.
-   Quindi dato che A appartiene a R^(mxp) deve valere:
-    rank(A) = min(m,p)
-    m >= p  ---> rank(A) = p
+   Vedere il report PDF per la spiegazione del problema
 %}
 
    
