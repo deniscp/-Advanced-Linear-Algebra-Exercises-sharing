@@ -1,8 +1,4 @@
 Baruffini Luca		900411
 Casartelli Matteo	884029
 Suozzi Denis		858894
-<<<<<<< HEAD
 Tarantino Giuseppe	863853
-=======
-Tarantino Giuseppe	xxxxxx
->>>>>>> e9429fdbf021bf88ac4bf3421295326a454165c7
