@@ -14,7 +14,7 @@ A =[  1    20     3    -5    24     0    -2     0    -4    -1     1    -2    13 
 %Calcolo della QR generalizzata di A
 [Q_a,R_a,L_a] = genQR(A)
 
-%Matrix of the maximal set of independent columns of the matrix A
+%Matrice dell'insieme massimo di colonne indipendenti della matrice A
 A_ind = A * L_a
 
 
