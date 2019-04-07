@@ -27,8 +27,6 @@ xln = xln_pinv
 %plot force vector position and velocity 
 
 for i=1:10
-  
-  
   vel(i) = A(2, 1:i) * xln(1:i) + 1;
   ai = [i-0.5:-1:0.5]; 
   pos(i) = ai * xln(1:i) + i ;
@@ -52,6 +50,9 @@ title('Velocita`')
 A2 = [ A(1,:); A(2,:) ] ;
 y2 = [-10; -1] 
 
+
+
+I = eye(10); 
 u = logspace(-4, 4,50); 
 for i=1:50
   %vettore f
