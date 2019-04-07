@@ -48,6 +48,24 @@ plot(vel)
 title('Velocita`')
 
     
-    
+%Secondo punto dell'esercizion 
+A2 = [ A(1,:); A(2,:) ] ;
+y2 = [-10; -1] 
+
+u = logspace(-4, 4,50); 
+for i=1:50
+  %vettore f
+  f = inv(A2'*A2 + u(i) * I ) * A2' * y2 ;
+  %calcolo J1, J2 con il nuovo vettore delle forze
+  J1(i) = (norm( A2 * f - y2 ))^2;
+  J2(i) = norm(f) ^ 2; 
+end
+
+hold on
+figure 2
+plot(J2, J1); 
+title ('Curva trade-off' ) ;
+ylabel('J1 = p(10)^2 + p^{\bullet}(10)^2')
+xlabel('J2 = ||x||^2')
       
  
