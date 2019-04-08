@@ -24,7 +24,7 @@ B = [ 1     2     0    -1     2     2
       2     4    -7    -1     0     0 ];
  
   
-%Lo spazio delle soluzioni del sistema lineare è lo spazio ortogonale allo
+%Lo spazio delle soluzioni del sistema lineare omogeneo è lo spazio ortogonale allo
 %spazio delle righe associato alla matrice dei coefficienti del sistema
 %lineare.
 
