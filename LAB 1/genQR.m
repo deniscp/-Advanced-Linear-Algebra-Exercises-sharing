@@ -12,7 +12,7 @@ end
 Q = [];
 R = [];
 L = [];
-%Matrix L if right-multiplied to the input matrix selects a set of columns
+%Matrix L if right-multiplied to the input matrix selects a set of maximal columns
 %that is linearly indipendent. If right-multiplied to the R matrix makes it
 %square and upper triangular.
 
